@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vojnic/efms1grps:grpstream
+    ports:
+      - "12345:4455"
+    networks:
+      - default

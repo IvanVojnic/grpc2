@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package api;
+
+option go_package = ".";
+
+service ms1 {
+  rpc Add(AddRequest) returns (AddResponse){}
+  rpc IsEvan(stream IsEvenNumRequest) returns (stream IsEvenNumResponse){}
+}
+
+message AddRequest {
+  int32 x = 1;
+  int32 y = 2;
+}
+
+message AddResponse {
+  int32 result = 1;
+}
+
+message IsEvenNumRequest {
+  int32 num = 1;
+}
+
+message IsEvenNumResponse {
+  bool isEvan = 1;
+}
